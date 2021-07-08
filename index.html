@@ -6,48 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>find words in a text</title>
+    <link rel="stylesheet" href="css/scroll.css">
+    <link rel="stylesheet" href="css/index.css">
+ 
 </head>
-<style>
-    * {
-        padding: 0;
-        margin: 0;
 
-    }
-
-    body {
-        background: skyblue;
-
-    }
-
-    .formulario {
-        margin: 20px auto;
-        text-align: center;
-        width: 60%;
-        display: grid;
-    }
-
-    #search {
-        padding: 10px 20px;
-        background: rgb(98, 137, 243);
-        outline: none;
-        border: none;
-        margin-top: 20px;
-        color: white;
-        font-weight: bold;
-        font-family: 'Times New Roman', Times, serif;
-    }
-
-    #search:hover {
-        color: rgb(98, 137, 243);
-        background: white;
-
-    }
-
-    #text {
-        min-height: 100px;
-    }
-
-</style>
 
 <body>
 
@@ -57,66 +20,10 @@
     </div>
 
     <div class="resultados">
-
+        
     </div>
 
 </body>
+<script src="js/index.js"></script>
 
 </html>
-<style>
-    
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgb(30, 206, 153);
-    border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgb(34, 153, 123);
-  }
-  
-</style>
-<script>
-    const search = document.querySelector('#search');
-    const text = document.querySelector("#text")
-    const results = document.querySelector(".resultados")
-
-    function normalizar(text) {
-        text = text.toLowerCase()
-        text = text.replace(/\,/g, "")
-        text = text.replace(/\./g, "")
-        text = text.split(" ")
-        let dicionario = {
-            "a": 0
-
-        }
-        for (let texto of text) {
-            if (dicionario[texto] !== undefined) {
-                dicionario[texto] += 1
-            } else {
-                dicionario[texto] = 1
-            }
-
-        }
-        for(let item in dicionario){
-            results.textContent+=dicionario
-        }
-    }
-    search.addEventListener("click", () => {
-        let texto = text.value
-        normalizar(texto)
-
-
-    })
-</script>
