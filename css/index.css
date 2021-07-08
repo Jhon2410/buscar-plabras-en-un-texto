@@ -1,0 +1,78 @@
+:root {
+    --widthDisplay: 80%;
+    --primary: rgb(98, 137, 243);
+    --colorText: #ffffff;
+    --border-R: 10px ;
+  }
+  
+* {
+    padding: 0;
+    margin: 0;
+    border-radius: var(--border-R);
+
+}
+
+body {
+    background: skyblue;
+   
+
+}
+
+.formulario {
+    margin: 20px auto;
+    text-align: center;
+    width: var(--widthDisplay) ;
+    display: grid;
+    
+}
+
+#search {
+    padding: 10px 20px;
+    background: rgb(98, 137, 243);
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    color: var(--colorText);
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#search:hover {
+    color: rgb(98, 137, 243);
+    background: white;
+
+}
+
+#text {
+    padding: 10px;
+    min-height: 100px;
+    color: var(--colorText);
+    font-weight: bold;
+    background: #4f4f4f;
+    font-size: 20px;
+}
+
+#text::placeholder {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    resize: both;
+    color: rgb(24, 155, 207);
+}
+.resultadosDiv{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    background: #4f4f4f;
+    text-align: center;
+    margin: 10px  auto;
+    width: var(--widthDisplay) ;
+    overflow: hidden;
+    padding: 4px 2px ;
+    color: var(--colorText);
+    font-weight: bold;
+}
+.resultadosDiv:hover{
+    color: rgb(98, 137, 243);
+    background: white;
+}
