@@ -3,24 +3,29 @@ const text = document.querySelector("#text")
 const results = document.querySelector(".resultados")
 
 function normalizar(text) {
+    results.innerHTML=""
     text = text.toLowerCase()
     text = text.replace(/\,/g, "")
     text = text.replace(/\./g, "")
+    text = text.replace(/\)/g, "")
+    text = text.replace(/\(/g, "")
     text = text.replace(/(\r\n|\n|\r)/gm, " ")
     text = text.split(" ")
     console.log(text)
-    let dicionario = {
+    let dicionario = {}
 
-
-    }
     for (let texto of text) {
         if (dicionario[texto] !== undefined) {
             dicionario[texto].cantidad++
         } else {
-            dicionario[texto] = {
+            if(texto!==" "){
+                dicionario[texto] = {
                 nombre: texto,
                 cantidad: 1
             }
+
+            }
+         
         }
 
     }
