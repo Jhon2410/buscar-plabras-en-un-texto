@@ -18,7 +18,8 @@ function normalizar(text) {
         if (dicionario[texto] !== undefined) {
             dicionario[texto].cantidad++
         } else {
-            if(texto!==" "){
+        
+            if(texto!==" " && texto !==""){
                 dicionario[texto] = {
                 nombre: texto,
                 cantidad: 1
